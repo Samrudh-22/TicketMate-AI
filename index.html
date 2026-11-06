@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketMate AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+
+<header class="navbar">
+    <h1>🎟️ TicketMate AI</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="#events">Explore Tickets</a>
+        <a href="#assistant">AI Assistant</a>
+        <a href="/admin">Admin</a>
+    </nav>
+</header>
+
+
+<section class="hero">
+    <h2>Find Your Next Experience!</h2>
+    <p>Discover events, explore tickets and book easily with AI.</p>
+
+
+    <div class="search-box">
+        <input type="text" id="searchInput"
+               placeholder="Search events...">
+        <button onclick="searchEvents()">Search</button>
+    </div>
+</section>
+
+
+<section class="events" id="events">
+    <h2>Explore Events</h2>
+
+
+    
+<div class="event-container" id="eventContainer">
+
+
+    {% for event_name, price in events.items() %}
+
+
+    <div class="event-card">
+
+
+        <div class="event-image">🎟️</div>
+
+
+        <h3>{{ event_name }}</h3>
+
+
+        <p>Price: ₹{{ price }}</p>
+
+
+        <button onclick="bookTicket('{{ event_name|e }}')">
+            Book Now
+        </button>
+
+
+    </div>
+
+
+    {% else %}
+
+
+    <p>No events are currently available.</p>
+
+
+    {% endfor %}
+
+
+</div>
+
+
+        <div class="event-card">
+            <div class="event-image">🎭</div>
+            <h3>College Fest</h3>
+            <p>Date: 20 November 2026</p>
+            <p>Price: ₹200</p>
+            <button onclick="bookTicket('College Fest')">
+                Book Now
+            </button>
+        </div>
+
+
+        <div class="event-card">
+            <div class="event-image">🏛️</div>
+            <h3>Museum Visit</h3>
+            <p>Date: 25 November 2026</p>
+            <p>Price: ₹100</p>
+            <button onclick="bookTicket('Museum Visit')">
+                Book Now
+            </button>
+        </div>
+
+
+    </div>
+</section>
+
+
+
+<section class="assistant" id="assistant">
+
+
+    <h2>🤖 TicketMate AI Assistant</h2>
+
+
+    <p>Ask me anything about tickets and events!</p>
+
+
+    <div class="chat-box" id="chatBox">
+
+
+        <div class="bot-message">
+            Hello! Welcome to TicketMate AI.
+            How can I help you?
+        </div>
+
+
+    </div>
+
+
+    <div class="chat-input">
+
+
+        <input type="text"
+               id="chatInput"
+               placeholder="Ask about tickets or events..."
+               onkeydown="if(event.key==='Enter') sendChatMessage()">
+
+
+        <button onclick="sendChatMessage()">Send</button>
+
+
+    </div>
+
+
+</section>
+
+
+
+<footer>
+    <p>© 2026 TicketMate AI | Smart Ticket Booking</p>
+</footer>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+</body>
+</html>

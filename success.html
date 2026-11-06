@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Successful</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="navbar">
+    <h1>🎟️ TicketMate AI</h1>
+</header>
+
+<main>
+    <div class="event-card" style="margin: auto; max-width: 450px;">
+        <h2>🎉 Booking Successful!</h2>
+
+        <p>Booking ID: {{ booking_id }}</p>
+        <p>Name: {{ name }}</p>
+        <p>Event: {{ event }}</p>
+        <p>Number of Tickets: {{ quantity }}</p>
+
+        <h2>Total Amount: ₹{{ total_price }}</h2>
+
+        <p>Your booking has been saved successfully.</p>
+
+<h3>Your Digital Ticket QR Code</h3>
+
+<img
+    src="{{ url_for('generate_qr', booking_id=booking_id) }}"
+    alt="Booking QR Code"
+    width="200"
+>
+
+<p>Show this QR code when entering the event.</p>
+
+        <button onclick="window.location.href='/'">
+            Back to Home
+        </button>
+    </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,422 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #6c4cf1;
+    --primary-dark: #5135d5;
+    --navy: #11142b;
+    --background: #f5f6fc;
+    --white: #ffffff;
+    --text: #20233a;
+    --muted: #747991;
+    --border: #e7e8f0;
+    --success: #16a36a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    background: var(--navy);
+    color: white;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 4px 20px #00000020;
+}
+
+.navbar h1 {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.navbar nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.navbar nav a {
+    color: #d6d7e8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #a995ff;
+}
+
+/* HERO SECTION */
+
+.hero {
+    text-align: center;
+    padding: 95px 20px;
+    background: linear-gradient(135deg, #171936, #40318e, #7254e9);
+    color: white;
+}
+
+.hero h2 {
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #dedafc;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 480px;
+    margin: auto;
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+    border: none;
+    border-radius: 9px;
+    outline: none;
+    font-size: 14px;
+}
+
+/* BUTTONS */
+
+button {
+    background: var(--primary);
+    color: white;
+    padding: 13px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* EVENTS */
+
+.events {
+    padding: 65px 6%;
+    text-align: center;
+}
+
+.events h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 35px;
+}
+
+.event-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.event-card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 5px 20px #1719360a;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.event-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px #17193618;
+}
+
+.event-image {
+    font-size: 55px;
+    padding: 25px;
+    background: linear-gradient(135deg, #eee9ff, #e4eaff);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.event-card h3 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.event-card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.event-card button {
+    margin-top: 12px;
+    width: 100%;
+}
+
+/* BOOKING FORM */
+
+.event-card input {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+.event-card input:focus,
+.chat-input input:focus,
+.search-box input:focus {
+    border-color: var(--primary);
+}
+
+.event-card form p {
+    margin: 15px 0;
+}
+
+.event-card form button {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* AI ASSISTANT */
+
+.assistant {
+    text-align: center;
+    padding: 65px 20px;
+    background: linear-gradient(135deg, #ece9ff, #f3f5ff);
+}
+
+.assistant h2 {
+    font-size: 29px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.assistant p {
+    color: var(--muted);
+    margin: 15px;
+}
+
+.chat-box {
+    background: white;
+    max-width: 650px;
+    height: 320px;
+    margin: 25px auto;
+    padding: 20px;
+    border-radius: 15px;
+    overflow-y: auto;
+    text-align: left;
+    box-shadow: 0 5px 25px #17193612;
+}
+
+.bot-message {
+    background: #eeeaff;
+    color: #39305f;
+    padding: 13px 16px;
+    border-radius: 12px;
+    margin: 10px 0;
+    white-space: pre-line;
+    max-width: 85%;
+    width: fit-content;
+    font-size: 14px;
+}
+
+.user-message {
+    background: var(--primary);
+    color: white;
+    padding: 13px 16px;
+    border-radius: 12px;
+    margin: 10px 0 10px auto;
+    max-width: 85%;
+    width: fit-content;
+    font-size: 14px;
+}
+
+.chat-input {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.chat-input input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+}
+
+.chat-book-link {
+    display: inline-block;
+    background: var(--success);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 7px;
+    text-decoration: none;
+    margin: 8px 0;
+}
+
+/* BOOKING SUCCESS */
+
+main {
+    padding: 60px 20px;
+    min-height: 75vh;
+}
+
+main .event-card {
+    max-width: 500px;
+    margin: auto;
+    padding: 35px;
+}
+
+main .event-card h2 {
+    color: var(--primary);
+    margin-bottom: 18px;
+}
+
+main .event-card p {
+    margin: 12px 0;
+    color: var(--text);
+}
+
+main .event-card img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border: 8px solid white;
+    box-shadow: 0 4px 15px #00000015;
+}
+
+main .event-card button {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    background: var(--navy);
+    color: #c7c9df;
+    padding: 25px;
+    font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar nav {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 65px 15px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .events {
+        padding: 45px 5%;
+    }
+
+    .event-container {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card {
+        width: 100%;
+    }
+
+    .chat-box {
+        height: 280px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    .chat-input {
+        flex-direction: column;
+    }
+
+    .chat-input button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .navbar h1 {
+        font-size: 23px;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+    }
+
+    .hero h2 {
+        font-size: 27px;
+    }
+
+    .events h2 {
+        font-size: 26px;
+    }
+
+    main .event-card {
+        padding: 20px;
+    }
+}
+
+

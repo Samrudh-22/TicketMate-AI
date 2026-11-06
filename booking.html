@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Ticket - TicketMate AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="navbar">
+    <h1>🎟️ TicketMate AI</h1>
+    <a href="/" style="color:white;">Back to Home</a>
+</header>
+
+<main>
+    <div class="event-card" style="margin: auto; max-width: 420px;">
+        <h2>Book Your Ticket</h2>
+
+        <h3>{{ event }}</h3>
+        <p>Ticket Price: ₹{{ price }}</p>
+
+        <form method="POST">
+
+            <p>
+                <input type="text" name="name"
+                       placeholder="Enter your name"
+                       required>
+            </p>
+
+            <p>
+                <input type="email" name="email"
+                       placeholder="Enter your email"
+                       required>
+            </p>
+
+            <p>
+                <label>Number of tickets:</label>
+                <input type="number" name="quantity"
+                       min="1" max="10" value="1" required>
+            </p>
+
+            <button type="submit">Confirm Booking</button>
+
+        </form>
+    </div>
+</main>
+
+</body>
+</html>
